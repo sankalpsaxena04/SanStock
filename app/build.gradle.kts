@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.google.devtools.ksp)
+    id("kotlin-kapt")
     alias(libs.plugins.kotlin.parcelize)
     alias(libs.plugins.dagger.hilt.android)
 }
@@ -83,9 +84,12 @@ dependencies {
     //Dagger - Hilt
     implementation (libs.hilt.android)
     ksp (libs.hilt.android.compiler)
-    implementation (libs.androidx.hilt.lifecycle.viewmodel)
+//    implementation (libs.androidx.hilt.lifecycle.viewmodel)
     ksp (libs.androidx.hilt.compiler)
     implementation (libs.androidx.hilt.navigation.compose)
+
+    implementation (libs.androidx.lifecycle.livedata.ktx)
+    implementation (libs.lifecycle.viewmodel.ktx)
 
     // Retrofit
     implementation (libs.retrofit)
